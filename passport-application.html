@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghana Passport Application | Ghana Visa Assistance</title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="Apply for Ghana Passport Assistance" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/treck-icons/style.css" />
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+
+    <!-- Paypal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=test&currency=GBP"></script>
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/treck.css" />
+    <link rel="stylesheet" href="assets/css/treck-responsive.css" />
+    <style>
+        .application-form {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .form-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #3498db;
+        }
+
+        .form-section h3 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f1f1f1;
+            font-size: 22px;
+        }
+
+        .form-section h3 i {
+            color: #3498db;
+            margin-right: 10px;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        .form-col {
+            flex: 1;
+            min-width: 250px;
+            padding: 0 15px;
+            margin-bottom: 20px;
+        }
+
+        .form-col label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .form-col input[type="text"],
+        .form-col input[type="email"],
+        .form-col input[type="tel"],
+        .form-col input[type="date"],
+        .form-col select,
+        .form-col input[type="file"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-col input:focus,
+        .form-col select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .dynamic-field {
+            display: none;
+            width: 100%;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+        }
+
+        .dynamic-field.active {
+            display: block;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .file-hint {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.2);
+        }
+
+        .btn i {
+            margin-right: 10px;
+        }
+
+        .price-display {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 2px dashed #ddd;
+        }
+
+        .price-display h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .price-amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: #3498db;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            display: none;
+        }
+
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading-spinner i {
+            font-size: 40px;
+            color: #3498db;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .payment-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #27ae60;
+        }
+
+        .payment-section h3 {
+            color: #27ae60;
+        }
+
+        #paypal-button-container {
+            margin-top: 20px;
+        }
+
+        .document-instruction {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border-left: 4px solid #f39c12;
+        }
+
+        .document-instruction h5 {
+            color: #f39c12;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .form-col {
+                min-width: 100%;
+            }
+            
+            .application-form {
+                padding: 20px 10px;
+            }
+            
+            .form-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body class="custom-cursor">
+
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+    
+    <div class="preloader">
+        <div class="preloader__image"></div>
+    </div>
+    <!-- /.preloader -->
+
+    <div class="page-wrapper">
+        <header class="main-header-three">
+            <nav class="main-menu main-menu-three">
+                <div class="main-menu-three__wrapper">
+                    <div class="main-menu-three__wrapper-inner">
+                        <div class="main-menu-three__logo">
+                            <a href="index.html"><img src="assets/images/resources/logo-1.png" alt=""></a>
+                        </div>
+                        
+                        <div class="main-menu-three__bottom">
+                            <div class="main-menu-three__bottom-inner">
+                                <div class="main-menu-three__main-menu-box">
+                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                    <ul class="main-menu__list one-page-scroll-menu">
+                                        <li class="scrollToLink">
+                                            <a href="index.html">Home</a>
+                                        </li>
+                                        <li class="scrollToLink">
+                                            <a href="index.html#about">About Us</a>
+                                        </li>
+                                        <li class="scrollToLink">
+                                            <a href="index.html#visa-services">Services</a>
+                                        </li>
+                                        <li class="scrollToLink">
+                                            <a href="index.html#pricing">Pricing</a>
+                                        </li>
+                                        <li class="scrollToLink">
+                                            <a href="index.html#contact">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="main-menu-three__right">
+                                    <div class="main-menu-three__call">
+                                        <div class="main-menu-three__call-icon">
+                                            <img src="assets/images/icon/main-menu-three-comment-icon.png" alt="">
+                                        </div>
+                                        <div class="main-menu-three__call-content">
+                                            <p class="main-menu-three__call-sub-title">Have Question?</p>
+                                            <h5 class="main-menu-three__call-number">
+                                                <a href="tel:9288009850"><span>Free</span> +92 (8800) - 9850</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="main-menu-three__btn">
+                                        <a href="passport-application.html">Submit Documents</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="stricky-header stricked-menu main-menu main-menu-three">
+            <div class="sticky-header__content"></div>
+        </div>
+
+        <!-- Page Title Start -->
+        <section class="page-title" style="background-image: url(assets/images/backgrounds/page-title-bg.jpg);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="page-title__inner">
+                            <h2>Passport Application</h2>
+                            <div class="page-title__breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="index.html#visa">Passport Services</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Passport Application</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Title End -->
+
+        <!-- Application Form Start -->
+        <div class="application-form">
+            <div class="container">
+                <div class="section-title text-center">
+                    <div class="section-title__tagline-box">
+                        <span class="section-title__tagline">Complete Application</span>
+                        <div class="section-title__border-box"></div>
+                    </div>
+                    <h2 class="section-title__title">Ghana Passport Application Form</h2>
+                    <p class="section-title__text">Complete all sections of the form to apply for a Ghanaian passport</p>
+                </div>
+
+                <div id="success-message" class="success-message">
+                    Your passport application has been submitted successfully! You will be contacted soon.
+                </div>
+
+                <div id="loading-spinner" class="loading-spinner">
+                    <i class="fas fa-spinner"></i>
+                    <p>Processing your application...</p>
+                </div>
+
+                <form id="passport-application-form" enctype="multipart/form-data">
+                    <!-- Price Display -->
+                    <div class="price-display">
+                        <h4>Total Payment Required</h4>
+                        <div class="price-amount">£<span id="total-price">30</span></div>
+                        <p>Fixed fee for passport application service</p>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Personal Information</h3>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="full_name">Full Name *</label>
+                                <input type="text" name="full_name" id="full_name" required>
+                                <span class="error-message" id="full_name_error"></span>
+                            </div>
+
+                            <div class="form-col">
+                                <label for="date_of_birth">Date of Birth *</label>
+                                <input type="date" name="date_of_birth" id="date_of_birth" required>
+                                <span class="error-message" id="date_of_birth_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="nationality">Nationality *</label>
+                                <input type="text" name="nationality" id="nationality" required>
+                                <span class="error-message" id="nationality_error"></span>
+                            </div>
+
+                            <div class="form-col">
+                                <label for="email">Email Address *</label>
+                                <input type="email" name="email" id="email" required>
+                                <span class="error-message" id="email_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="phone_number">Phone Number *</label>
+                                <input type="tel" name="phone_number" id="phone_number" required>
+                                <span class="error-message" id="phone_number_error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Passport Type -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-passport"></i> Passport Type</h3>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="passport_type">Application Type *</label>
+                                <select name="passport_type" id="passport_type" required>
+                                    <option value="">Select Application Type</option>
+                                    <option value="renewal">Passport Renewal</option>
+                                    <option value="lost">Lost/Stolen Passport</option>
+                                    <option value="damaged">Damaged Passport</option>
+                                    <option value="first_time">First Time Application</option>
+                                </select>
+                                <span class="error-message" id="passport_type_error"></span>
+                            </div>
+
+                            <div class="form-col">
+                                <label for="is_minor">Is the applicant under 18 years? *</label>
+                                <select name="is_minor" id="is_minor" required>
+                                    <option value="">Select Option</option>
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                                <span class="error-message" id="is_minor_error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Parent Information (for minors) -->
+                    <div id="parent-fields" class="form-section dynamic-field">
+                        <h3><i class="fas fa-users"></i> Parent Information</h3>
+                        
+                        <div class="document-instruction">
+                            <h5><i class="fas fa-info-circle"></i> Required for applicants under 18 years</h5>
+                            <p>Please provide both parents' information unless only one parent is available.</p>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="father_name">Father's Full Name *</label>
+                                <input type="text" name="father_name" id="father_name">
+                                <span class="error-message" id="father_name_error"></span>
+                            </div>
+
+                            <div class="form-col">
+                                <label for="father_passport_number">Father's Passport Number *</label>
+                                <input type="text" name="father_passport_number" id="father_passport_number">
+                                <span class="error-message" id="father_passport_number_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="mother_name">Mother's Full Name *</label>
+                                <input type="text" name="mother_name" id="mother_name">
+                                <span class="error-message" id="mother_name_error"></span>
+                            </div>
+
+                            <div class="form-col">
+                                <label for="mother_passport_number">Mother's Passport Number *</label>
+                                <input type="text" name="mother_passport_number" id="mother_passport_number">
+                                <span class="error-message" id="mother_passport_number_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="single_parent">Is only one parent available? *</label>
+                                <select name="single_parent" id="single_parent">
+                                    <option value="">Select Option</option>
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                                <span class="error-message" id="single_parent_error"></span>
+                            </div>
+                        </div>
+
+                        <div id="affidavit-field" class="dynamic-field">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label for="affidavit_document">Affidavit Document *</label>
+                                    <input type="file" name="affidavit_document" id="affidavit_document" accept=".pdf,.jpg,.jpeg,.png">
+                                    <p class="file-hint">PDF, JPG or PNG (Max 2MB) - Required if only one parent is available</p>
+                                    <span class="error-message" id="affidavit_document_error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="parents_passports">Parents' Passport Copies *</label>
+                                <input type="file" name="parents_passports" id="parents_passports" accept=".pdf,.jpg,.jpeg,.png">
+                                <p class="file-hint">PDF, JPG or PNG (Max 2MB) - Copies of both parents' passports</p>
+                                <span class="error-message" id="parents_passports_error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Legal Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-gavel"></i> Legal Information</h3>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="has_name_change">Have you legally changed your name? *</label>
+                                <select name="has_name_change" id="has_name_change" required>
+                                    <option value="">Select Option</option>
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                                <span class="error-message" id="has_name_change_error"></span>
+                            </div>
+                        </div>
+
+                        <div id="name-change-field" class="dynamic-field">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label for="name_change_document">Change of Name Deed *</label>
+                                    <input type="file" name="name_change_document" id="name_change_document" accept=".pdf,.jpg,.jpeg,.png">
+                                    <p class="file-hint">PDF, JPG or PNG (Max 2MB) - Required if name has been legally changed</p>
+                                    <span class="error-message" id="name_change_document_error"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Supporting Documents -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-file-alt"></i> Supporting Documents</h3>
+
+                        <div class="document-instruction">
+                            <h5><i class="fas fa-info-circle"></i> Document Requirements</h5>
+                            <p>Different documents are required based on the application type. Required documents will appear based on your selections.</p>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="photograph">Passport Photograph *</label>
+                                <input type="file" name="photograph" id="photograph" accept=".jpg,.jpeg,.png" required>
+                                <p class="file-hint">JPG or PNG (White background, Max 1MB) - Recent passport-sized photo</p>
+                                <span class="error-message" id="photograph_error"></span>
+                            </div>
+                        </div>
+
+                        <div id="passport-biodata-field" class="dynamic-field">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label for="passport_biodata">Current Passport Biodata Page *</label>
+                                    <input type="file" name="passport_biodata" id="passport_biodata" accept=".pdf,.jpg,.jpeg,.png">
+                                    <p class="file-hint">PDF, JPG or PNG (Max 2MB) - Required for passport renewal</p>
+                                    <span class="error-message" id="passport_biodata_error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="birth-certificate-field" class="dynamic-field">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label for="birth_certificate">Birth Certificate *</label>
+                                    <input type="file" name="birth_certificate" id="birth_certificate" accept=".pdf,.jpg,.jpeg,.png">
+                                    <p class="file-hint">PDF, JPG or PNG (Max 2MB) - Required for first-time applications</p>
+                                    <span class="error-message" id="birth_certificate_error"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Section -->
+                    <div class="payment-section">
+                        <h3><i class="fas fa-credit-card"></i> Payment</h3>
+                        <p>Please complete the £30 payment to submit your passport application.</p>
+                        
+                        <div id="paypal-button-container"></div>
+                        <input type="hidden" id="payment_completed" name="payment_completed" value="0">
+                    </div>
+
+                    <!-- Form Submission -->
+                    <div class="form-submit">
+                        <button type="submit" class="btn" id="submit-btn" disabled>
+                            <i class="fas fa-paper-plane"></i> Submit Application
+                        </button>
+                        <p class="file-hint" style="margin-top: 15px;">* Please complete payment before submitting</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Application Form End -->
+
+        <!--Site Footer Start-->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer__top">
+                    <div class="site-footer__map float-bob-x">
+                        <img src="assets/images/shapes/site-footer-map-1.png" alt="">
+                    </div>
+                </div>
+                <div class="site-footer__middle">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="footer-widget__column footer-widget__about">
+                                <div class="footer-widget__logo">
+                                    <a href="index.html"><img src="assets/images/resources/footer-logo.png" alt=""></a>
+                                </div>
+                                <p class="footer-widget__about-text">We provide expert assistance with your travel documentation, ensuring a hassle-free experience. Our goal is to simplify the process, making your journey as smooth and stress-free as possible.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                            <div class="footer-widget__column footer-widget__link">
+                                <div class="footer-widget__title-box">
+                                    <h3 class="footer-widget__title">Explore</h3>
+                                </div>
+                                <ul class="footer-widget__link-list list-unstyled">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="index.html#about">About Us</a></li>
+                                    <li><a href="index.html#visa-services">Services</a></li>
+                                    <li><a href="index.html#pricing">Pricing</a></li>
+                                    <li><a href="index.html#contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                            <div class="footer-widget__column footer-widget__passport">
+                                <div class="footer-widget__title-box">
+                                    <h3 class="footer-widget__title">Passport</h3>
+                                </div>
+                                <ul class="footer-widget__passport-list list-unstyled">
+                                    <li><a href="passport-application.html?type=renewal">Passport Renewal</a></li>
+                                    <li><a href="passport-application.html?type=lost">Lost Passport</a></li>
+                                    <li><a href="passport-application.html?type=damaged">Damaged Passport</a></li>
+                                    <li><a href="passport-application.html?type=first_time">First-Time Passport</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+                            <div class="footer-widget__column footer-widget__Contact">
+                                <div class="footer-widget__title-box">
+                                    <h3 class="footer-widget__title">Contact</h3>
+                                </div>
+                                <ul class="footer-widget__Contact-list list-unstyled">
+                                    <li>
+                                        <div class="icon">
+                                            <span class="fas fa-envelope"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="mailto:needhelp@company.com">needhelp@company.com</a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="fas fa-map-marker-alt"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>30 Commercial Road <br> Fratton, Australia</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="fas fa-clock"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>Mon – Sat: 8:00 am to 6:00 pm <br> Sunday: Closed</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-footer__bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="site-footer__bottom-inner">
+                                    <p class="site-footer__bottom-text">© Copyright 2025 by <a href="#">ghanavisaassist.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Site Footer End-->
+    </div>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo-2.png" width="135" alt="" /></a>
+            </div>
+            <div class="mobile-nav__container"></div>
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:needhelp@company.com">needhelp@company.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="tel:9288009850">+92 (8800) - 9850</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow"></i></a>
+
+    <script src="assets/vendors/jquery/jquery-3.6.4.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+
+    <!-- template js -->
+    <script src="assets/js/treck.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const passportType = urlParams.get('type');
+            
+            // Set passport type if provided in URL
+            if (passportType && ['renewal', 'lost', 'damaged', 'first_time'].includes(passportType)) {
+                document.getElementById('passport_type').value = passportType;
+                // Trigger change event to show/hide appropriate fields
+                const event = new Event('change');
+                document.getElementById('passport_type').dispatchEvent(event);
+            }
+
+            // Toggle parent fields based on is_minor
+            const isMinorToggle = document.getElementById('is_minor');
+            const parentFields = document.getElementById('parent-fields');
+
+            function toggleParentFields() {
+                if (isMinorToggle.value === '1') {
+                    parentFields.classList.add('active');
+                    // Add required attributes
+                    document.getElementById('father_name').required = true;
+                    document.getElementById('father_passport_number').required = true;
+                    document.getElementById('mother_name').required = true;
+                    document.getElementById('mother_passport_number').required = true;
+                    document.getElementById('single_parent').required = true;
+                    document.getElementById('parents_passports').required = true;
+                } else {
+                    parentFields.classList.remove('active');
+                    // Remove required attributes
+                    document.getElementById('father_name').required = false;
+                    document.getElementById('father_passport_number').required = false;
+                    document.getElementById('mother_name').required = false;
+                    document.getElementById('mother_passport_number').required = false;
+                    document.getElementById('single_parent').required = false;
+                    document.getElementById('parents_passports').required = false;
+                    // Also hide affidavit field
+                    document.getElementById('affidavit-field').classList.remove('active');
+                    document.getElementById('affidavit_document').required = false;
+                }
+            }
+
+            if (isMinorToggle) {
+                isMinorToggle.addEventListener('change', toggleParentFields);
+            }
+
+            // Toggle single parent affidavit field
+            const singleParentToggle = document.getElementById('single_parent');
+            const affidavitField = document.getElementById('affidavit-field');
+
+            function toggleAffidavitField() {
+                if (singleParentToggle.value === '1') {
+                    affidavitField.classList.add('active');
+                    document.getElementById('affidavit_document').required = true;
+                } else {
+                    affidavitField.classList.remove('active');
+                    document.getElementById('affidavit_document').required = false;
+                }
+            }
+
+            if (singleParentToggle) {
+                singleParentToggle.addEventListener('change', toggleAffidavitField);
+            }
+
+            // Toggle name change document field
+            const nameChangeToggle = document.getElementById('has_name_change');
+            const nameChangeField = document.getElementById('name-change-field');
+
+            function toggleNameChangeField() {
+                if (nameChangeToggle.value === '1') {
+                    nameChangeField.classList.add('active');
+                    document.getElementById('name_change_document').required = true;
+                } else {
+                    nameChangeField.classList.remove('active');
+                    document.getElementById('name_change_document').required = false;
+                }
+            }
+
+            if (nameChangeToggle) {
+                nameChangeToggle.addEventListener('change', toggleNameChangeField);
+            }
+
+            // Toggle passport biodata and birth certificate fields
+            const passportTypeToggle = document.getElementById('passport_type');
+            const passportBiodataField = document.getElementById('passport-biodata-field');
+            const birthCertificateField = document.getElementById('birth-certificate-field');
+
+            function toggleDocumentFields() {
+                if (passportTypeToggle.value === 'renewal') {
+                    passportBiodataField.classList.add('active');
+                    birthCertificateField.classList.remove('active');
+                    document.getElementById('passport_biodata').required = true;
+                    document.getElementById('birth_certificate').required = false;
+                } else if (passportTypeToggle.value === 'first_time') {
+                    passportBiodataField.classList.remove('active');
+                    birthCertificateField.classList.add('active');
+                    document.getElementById('passport_biodata').required = false;
+                    document.getElementById('birth_certificate').required = true;
+                } else {
+                    passportBiodataField.classList.remove('active');
+                    birthCertificateField.classList.remove('active');
+                    document.getElementById('passport_biodata').required = false;
+                    document.getElementById('birth_certificate').required = false;
+                }
+            }
+
+            if (passportTypeToggle) {
+                passportTypeToggle.addEventListener('change', toggleDocumentFields);
+                // Also trigger on load
+                toggleDocumentFields();
+            }
+
+            // Initialize PayPal
+            let paypalInitialized = false;
+            
+            function initializePayPal() {
+                if (paypalInitialized) {
+                    // Re-render PayPal button
+                    document.getElementById('paypal-button-container').innerHTML = '';
+                }
+                
+                paypal.Buttons({
+                    createOrder: function(data, actions) {
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount: {
+                                    value: '30.00',
+                                    currency_code: 'GBP'
+                                },
+                                description: 'Passport Application Service'
+                            }]
+                        });
+                    },
+                    onApprove: function(data, actions) {
+                        return actions.order.capture().then(function(details) {
+                            // Payment completed successfully
+                            document.getElementById('payment_completed').value = '1';
+                            document.getElementById('submit-btn').disabled = false;
+                            
+                            // Show success message
+                            alert('Payment completed successfully! You can now submit your application.');
+                        });
+                    },
+                    onError: function(err) {
+                        console.error('PayPal Error:', err);
+                        alert('Payment failed. Please try again.');
+                    }
+                }).render('#paypal-button-container');
+                
+                paypalInitialized = true;
+            }
+
+            // Initialize PayPal on page load
+            initializePayPal();
+
+            // Form submission
+            document.getElementById('passport-application-form').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Check if payment is completed
+                if (document.getElementById('payment_completed').value !== '1') {
+                    alert('Please complete the payment before submitting the application.');
+                    return;
+                }
+                
+                // Show loading spinner
+                document.getElementById('loading-spinner').style.display = 'block';
+                
+                // Clear previous errors
+                document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+                
+                // Create FormData
+                const formData = new FormData(this);
+                
+                try {
+                    // Submit to API
+                    const response = await fetch('https://ghassist.vegatechhub.com/passport-application', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    const result = await response.json();
+                    
+                    // Hide loading spinner
+                    document.getElementById('loading-spinner').style.display = 'none';
+                    
+                    if (response.ok && result.success) {
+                        // Show success message
+                        document.getElementById('success-message').style.display = 'block';
+                        document.getElementById('passport-application-form').reset();
+                        document.getElementById('submit-btn').disabled = true;
+                        document.getElementById('payment_completed').value = '0';
+                        
+                        // Reset all dynamic fields
+                        document.querySelectorAll('.dynamic-field').forEach(field => {
+                            field.classList.remove('active');
+                        });
+                        
+                        // Scroll to success message
+                        document.getElementById('success-message').scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        // Show validation errors
+                        if (result.errors) {
+                            for (const [field, message] of Object.entries(result.errors)) {
+                                const errorElement = document.getElementById(`${field}_error`);
+                                if (errorElement) {
+                                    errorElement.textContent = message[0];
+                                }
+                            }
+                        } else {
+                            alert('Submission failed: ' + (result.message || 'Unknown error'));
+                        }
+                    }
+                } catch (error) {
+                    // Hide loading spinner
+                    document.getElementById('loading-spinner').style.display = 'none';
+                    console.error('Error:', error);
+                    alert('An error occurred while submitting the application. Please try again.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit Documents | Ghana Visa Assistance</title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="Submit your documents for Ghana visa or passport assistance" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/treck-icons/style.css" />
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/treck.css" />
+    <link rel="stylesheet" href="assets/css/treck-responsive.css" />
+    <style>
+        .services-choices {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .service-choice-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 2px solid transparent;
+        }
+
+        .service-choice-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-choice-card.visa {
+            border-color: #e74c3c;
+        }
+
+        .service-choice-card.passport {
+            border-color: #3498db;
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+        }
+
+        .service-icon.visa {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        .service-icon.passport {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+
+        .service-choice-card h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-features li i {
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .service-features.visa li i {
+            color: #e74c3c;
+        }
+
+        .service-features.passport li i {
+            color: #3498db;
+        }
+
+        .price-tag {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 25px 0;
+            display: inline-block;
+        }
+
+        .price-tag h4 {
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        .price-tag .amount {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .visa .amount {
+            color: #e74c3c;
+        }
+
+        .passport .amount {
+            color: #3498db;
+        }
+
+        .choose-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .choose-btn.visa {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .choose-btn.visa:hover {
+            background: white;
+            color: #e74c3c;
+            border-color: #e74c3c;
+        }
+
+        .choose-btn.passport {
+            background: #3498db;
+            color: white;
+        }
+
+        .choose-btn.passport:hover {
+            background: white;
+            color: #3498db;
+            border-color: #3498db;
+        }
+
+        .document-checklist {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .checklist-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 4px solid #2ecc71;
+        }
+
+        .checklist-card h4 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .checklist-card h4 i {
+            margin-right: 10px;
+            color: #2ecc71;
+        }
+
+        .checklist-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist-items li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+        }
+
+        .checklist-items li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-items li i {
+            margin-right: 10px;
+            color: #2ecc71;
+        }
+
+        .process-steps {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .step-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .step-connector {
+            position: absolute;
+            top: 30px;
+            right: -30px;
+            width: 60px;
+            height: 2px;
+            background: #ddd;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .step-connector {
+                display: none;
+            }
+        }
+
+        .faq-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            display: none;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="custom-cursor">
+
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+    
+    <div class="preloader">
+        <div class="preloader__image"></div>
+    </div>
+    <!-- /.preloader -->
+
+    <div class="page-wrapper">
+        <header class="main-header-three">
+            <nav class="main-menu main-menu-three">
+                <div class="main-menu-three__wrapper">
+                    <div class="main-menu-three__wrapper-inner">
+                        <div class="main-menu-three__logo">
+                            <a href="index.html"><img src="assets/images/resources/logo-1.png" alt=""></a>
+                        </div>
+                        
+                        <div class="main-menu-three__bottom">
+                            <div class="main-menu-three__bottom-inner">
+                                <div class="main-menu-three__main-menu-box">
+                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                    <ul class="main-menu__list one-page-scroll-menu">
+                                        <li class="scrollToLink">
+                                            <a href="index.html">Home</a>
+                                        </li>
+                                        <li class="scrollToLink">
+                                            <a href="index.html#about">About Us</a>
+                                        </li>
+                                        <li class="scrollToLink">
+                                            <a href="index.html#visa-services">Services</a>
+                                        </li>
+                                        <li class="scrollToLink">
+                                            <a href="index.html#pricing">Pricing</a>
+                                        </li>
+                                        <li class="scrollToLink">
+                                            <a href="index.html#contact">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="main-menu-three__right">
+                                    <div class="main-menu-three__call">
+                                        <div class="main-menu-three__call-icon">
+                                            <img src="assets/images/icon/main-menu-three-comment-icon.png" alt="">
+                                        </div>
+                                        <div class="main-menu-three__call-content">
+                                            <p class="main-menu-three__call-sub-title">Have Question?</p>
+                                            <h5 class="main-menu-three__call-number">
+                                                <a href="tel:9288009850"><span>Free</span> +92 (8800) - 9850</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="main-menu-three__btn">
+                                        <a href="submit-documents.html">Submit Documents</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="stricky-header stricked-menu main-menu main-menu-three">
+            <div class="sticky-header__content"></div>
+        </div>
+
+        <!-- Page Title Start -->
+        <section class="page-title" style="background-image: url(assets/images/backgrounds/page-title-bg.jpg);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="page-title__inner">
+                            <h2>Submit Documents</h2>
+                            <div class="page-title__breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Submit Documents</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Title End -->
+
+        <!-- Service Choices Start -->
+        <section class="services-choices">
+            <div class="container">
+                <div class="section-title text-center">
+                    <div class="section-title__tagline-box">
+                        <span class="section-title__tagline">Get Started</span>
+                        <div class="section-title__border-box"></div>
+                    </div>
+                    <h2 class="section-title__title">Choose Your Service</h2>
+                    <p class="section-title__text">Select whether you need visa or passport assistance to begin your application process</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="service-choice-card visa">
+                            <div class="service-icon visa">
+                                <span class="icon-visa"></span>
+                            </div>
+                            <h3>Visa Assistance</h3>
+                            <p>Apply for Ghana Tourist, Business, or Family Visa with our expert assistance.</p>
+                            
+                            <ul class="service-features visa">
+                                <li><i class="fas fa-check-circle"></i> Tourist Visa for leisure travel</li>
+                                <li><i class="fas fa-check-circle"></i> Business Visa for meetings & conferences</li>
+                                <li><i class="fas fa-check-circle"></i> Family Visa for visiting relatives</li>
+                                <li><i class="fas fa-check-circle"></i> Expert document review & verification</li>
+                                <li><i class="fas fa-check-circle"></i> Application form assistance</li>
+                                <li><i class="fas fa-check-circle"></i> Appointment scheduling help</li>
+                            </ul>
+                            
+                            <div class="price-tag">
+                                <h4>Starting from</h4>
+                                <div class="amount visa">£30</div>
+                                <p>per person (discounts for families)</p>
+                            </div>
+                            
+                            <a href="visa-application.html" class="choose-btn visa">
+                                Apply for Visa <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4">
+                        <div class="service-choice-card passport">
+                            <div class="service-icon passport">
+                                <span class="icon-passport"></span>
+                            </div>
+                            <h3>Passport Assistance</h3>
+                            <p>Renew, replace, or apply for your first Ghanaian passport with our help.</p>
+                            
+                            <ul class="service-features passport">
+                                <li><i class="fas fa-check-circle"></i> Passport renewal for expired passports</li>
+                                <li><i class="fas fa-check-circle"></i> Lost/stolen passport replacement</li>
+                                <li><i class="fas fa-check-circle"></i> Damaged passport replacement</li>
+                                <li><i class="fas fa-check-circle"></i> First-time passport applications</li>
+                                <li><i class="fas fa-check-circle"></i> Minor passport applications</li>
+                                <li><i class="fas fa-check-circle"></i> Name change applications</li>
+                            </ul>
+                            
+                            <div class="price-tag">
+                                <h4>Fixed Service Fee</h4>
+                                <div class="amount passport">£30</div>
+                                <p>per application</p>
+                            </div>
+                            
+                            <a href="passport-application.html" class="choose-btn passport">
+                                Apply for Passport <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Service Choices End -->
+
+        <!-- Document Checklist Start -->
+        <section class="document-checklist">
+            <div class="container">
+                <div class="section-title text-center">
+                    <div class="section-title__tagline-box">
+                        <span class="section-title__tagline">Required Documents</span>
+                        <div class="section-title__border-box"></div>
+                    </div>
+                    <h2 class="section-title__title">General Document Requirements</h2>
+                    <p class="section-title__text">Make sure you have these documents ready before starting your application</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="checklist-card">
+                            <h4><i class="fas fa-passport"></i> For Visa Applications</h4>
+                            <ul class="checklist-items">
+                                <li><i class="fas fa-check"></i> Valid passport (minimum 6 months validity)</li>
+                                <li><i class="fas fa-check"></i> Passport biodata page scan</li>
+                                <li><i class="fas fa-check"></i> Recent passport photograph (white background)</li>
+                                <li><i class="fas fa-check"></i> Proof of accommodation (hotel booking or invitation)</li>
+                                <li><i class="fas fa-check"></i> Travel itinerary or flight details</li>
+                                <li><i class="fas fa-check"></i> Proof of financial means</li>
+                                <li><i class="fas fa-check"></i> Host invitation letter (if applicable)</li>
+                                <li><i class="fas fa-check"></i> Host identification documents (if applicable)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="checklist-card">
+                            <h4><i class="fas fa-id-card"></i> For Passport Applications</h4>
+                            <ul class="checklist-items">
+                                <li><i class="fas fa-check"></i> Recent passport photograph (white background)</li>
+                                <li><i class="fas fa-check"></i> Current passport (for renewal applications)</li>
+                                <li><i class="fas fa-check"></i> Birth certificate (for first-time applications)</li>
+                                <li><i class="fas fa-check"></i> Parents' passports (for minors)</li>
+                                <li><i class="fas fa-check"></i> Affidavit for lost/stolen passports</li>
+                                <li><i class="fas fa-check"></i> Change of name deed (if applicable)</li>
+                                <li><i class="fas fa-check"></i> Police report (for lost passports)</li>
+                                <li><i class="fas fa-check"></i> Parental consent affidavit (for single parents)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <div class="alert alert-info" style="max-width: 800px; margin: 0 auto;">
+                        <h5><i class="fas fa-info-circle"></i> Important Note</h5>
+                        <p>Additional documents may be required based on your specific situation. Our team will guide you through the exact requirements during the application process.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Document Checklist End -->
+
+        <!-- Process Steps Start -->
+        <section class="process-steps">
+            <div class="container">
+                <div class="section-title text-center">
+                    <div class="section-title__tagline-box">
+                        <span class="section-title__tagline">How It Works</span>
+                        <div class="section-title__border-box"></div>
+                    </div>
+                    <h2 class="section-title__title">Simple Application Process</h2>
+                    <p class="section-title__text">Follow these easy steps to complete your application</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <h4>Choose Service</h4>
+                            <p>Select either visa or passport assistance based on your needs</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="step-card">
+                            <div class="step-connector"></div>
+                            <div class="step-number">2</div>
+                            <h4>Complete Form</h4>
+                            <p>Fill out the online application form with your personal details</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="step-card">
+                            <div class="step-connector"></div>
+                            <div class="step-number">3</div>
+                            <h4>Upload Documents</h4>
+                            <p>Upload all required documents in PDF, JPG, or PNG format</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="step-card">
+                            <div class="step-connector"></div>
+                            <div class="step-number">4</div>
+                            <h4>Submit & Pay</h4>
+                            <p>Make secure payment and submit your application for processing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Process Steps End -->
+
+        <!-- FAQ Start -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-title text-center">
+                    <div class="section-title__tagline-box">
+                        <span class="section-title__tagline">Questions & Answers</span>
+                        <div class="section-title__border-box"></div>
+                    </div>
+                    <h2 class="section-title__title">Frequently Asked Questions</h2>
+                    <p class="section-title__text">Find answers to common questions about our services</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How long does the visa application process take?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our standard processing time is 10 working days from the date of complete submission. This includes document verification, application submission, and interview scheduling if required.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What if I don't have all the required documents?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>You can start your application with the documents you have. Our team will review your submission and provide guidance on any missing documents. We can also advise on alternative documents that may be acceptable.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Is the service fee refundable if my application is rejected?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our service fee covers the assistance and processing work we do on your behalf. While we strive for 100% success rate, if your application is rejected due to circumstances beyond our control, the service fee is non-refundable. However, we provide detailed feedback and can assist with reapplication.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>Can I apply for multiple family members together?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, you can apply for multiple family members in a single application. We offer family discounts for visa applications. For passport applications, each individual needs a separate application, but you can submit them together for convenience.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>How do I know if my documents are acceptable?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our system will validate your documents during upload. Additionally, our team reviews all submissions within 24 hours and will contact you if any documents need to be resubmitted or if additional documents are required.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <span>What payment methods do you accept?</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We accept secure payments through PayPal. All transactions are encrypted and secure. You'll be redirected to the payment gateway after completing your application form.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ End -->
+
+        <!-- Call to Action Start -->
+        <section class="excellence-one">
+            <div class="container">
+                <div class="excellence-one__inner">
+                    <div class="excellence-one__bg"
+                        style="background-image: url(assets/images/backgrounds/excellence-one-bg.png);"></div>
+                    <div class="excellence-one__shape-1 img-bounce">
+                        <img src="assets/images/shapes/excellence-one-shape-1.png" alt="">
+                    </div>
+                    <div class="excellence-one__shape-2 float-bob-x">
+                        <img src="assets/images/shapes/excellence-one-shape-2.png" alt="">
+                    </div>
+                    <h3 class="excellence-one__title">Ready to submit your documents?
+                        <br> Choose your service below</h3>
+                    <div class="excellence-one__btn-box">
+                        <a href="visa-application.html" class="excellence-one__btn thm-btn" style="background: #e74c3c; margin-right: 15px;">
+                            Apply for Visa
+                        </a>
+                        <a href="passport-application.html" class="excellence-one__btn thm-btn" style="background: #3498db;">
+                            Apply for Passport
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Call to Action End -->
+
+        <!--Site Footer Start-->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer__top">
+                    <div class="site-footer__map float-bob-x">
+                        <img src="assets/images/shapes/site-footer-map-1.png" alt="">
+                    </div>
+                </div>
+                <div class="site-footer__middle">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="footer-widget__column footer-widget__about">
+                                <div class="footer-widget__logo">
+                                    <a href="index.html"><img src="assets/images/resources/footer-logo.png" alt=""></a>
+                                </div>
+                                <p class="footer-widget__about-text">We provide expert assistance with your travel documentation, ensuring a hassle-free experience. Our goal is to simplify the process, making your journey as smooth and stress-free as possible.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-1 col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                            <div class="footer-widget__column footer-widget__link">
+                                <div class="footer-widget__title-box">
+                                    <h3 class="footer-widget__title">Explore</h3>
+                                </div>
+                                <ul class="footer-widget__link-list list-unstyled">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="index.html#about">About Us</a></li>
+                                    <li><a href="index.html#visa-services">Services</a></li>
+                                    <li><a href="index.html#pricing">Pricing</a></li>
+                                    <li><a href="index.html#contact">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                            <div class="footer-widget__column footer-widget__visa">
+                                <div class="footer-widget__title-box">
+                                    <h3 class="footer-widget__title">Visa</h3>
+                                </div>
+                                <ul class="footer-widget__visa-list list-unstyled">
+                                    <li><a href="visa-application.html?type=tourist">Tourist Visa</a></li>
+                                    <li><a href="visa-application.html?type=business">Business Visa</a></li>
+                                    <li><a href="visa-application.html?type=family">Family Visa</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                            <div class="footer-widget__column footer-widget__passport">
+                                <div class="footer-widget__title-box">
+                                    <h3 class="footer-widget__title">Passport</h3>
+                                </div>
+                                <ul class="footer-widget__passport-list list-unstyled">
+                                    <li><a href="passport-application.html?type=renewal">Passport Renewal</a></li>
+                                    <li><a href="passport-application.html?type=lost">Lost Passport</a></li>
+                                    <li><a href="passport-application.html?type=damaged">Damaged Passport</a></li>
+                                    <li><a href="passport-application.html?type=first_time">First-Time Passport</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+                            <div class="footer-widget__column footer-widget__Contact">
+                                <div class="footer-widget__title-box">
+                                    <h3 class="footer-widget__title">Contact</h3>
+                                </div>
+                                <ul class="footer-widget__Contact-list list-unstyled">
+                                    <li>
+                                        <div class="icon">
+                                            <span class="fas fa-envelope"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="mailto:needhelp@company.com">needhelp@company.com</a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="fas fa-map-marker-alt"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>30 Commercial Road <br> Fratton, Australia</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="fas fa-clock"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>Mon – Sat: 8:00 am to 6:00 pm <br> Sunday: Closed</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-footer__bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="site-footer__bottom-inner">
+                                    <p class="site-footer__bottom-text">© Copyright 2025 by <a href="#">ghanavisaassist.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Site Footer End-->
+    </div>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo-2.png" width="135" alt="" /></a>
+            </div>
+            <div class="mobile-nav__container"></div>
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:needhelp@company.com">needhelp@company.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="tel:9288009850">+92 (8800) - 9850</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow"></i></a>
+
+    <script src="assets/vendors/jquery/jquery-3.6.4.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+
+    <!-- template js -->
+    <script src="assets/js/treck.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Toggle
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    faqItem.classList.toggle('active');
+                });
+            });
+
+            // Set current year in copyright
+            const currentYear = new Date().getFullYear();
+            const copyrightElement = document.querySelector('.site-footer__bottom-text');
+            if (copyrightElement) {
+                copyrightElement.innerHTML = copyrightElement.innerHTML.replace('2025', currentYear);
+            }
+        });
+    </script>
+</body>
+</html>
