@@ -204,6 +204,9 @@ ul {
   transform: translate(calc(-50% + 5px), -50%);
   z-index: 999991;
 }
+.custom-cursor__cursor.hide-cursor {
+  display: none !important;
+}
 
 .custom-cursor__cursor-two {
   width: 10px;
@@ -218,6 +221,9 @@ ul {
   -webkit-transition: width .3s, height .3s, opacity .3s;
   transition: width .3s, height .3s, opacity .3s;
   z-index: 999991;
+}
+.custom-cursor__cursor-two.hide-cursor {
+  display: none !important;
 }
 
 .custom-cursor__hover {

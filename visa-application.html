@@ -401,11 +401,239 @@
                             </div>
                         </div>
 
-<div class="form-row">
+                        <div class="form-row">
                             <div class="form-col">
-                                <label for="hotel_confirmation_number">Confirmation Number *</label>
-                                <input type="text" name="hotel_confirmation_number" id="hotel_confirmation_number">
-                                <span class="error-message" id="hotel_confirmation_number_error"></span>
+                                <label for="phone_number">Phone Number *</label>
+                                <input type="tel" name="phone_number" id="phone_number" required>
+                                <span class="error-message" id="phone_number_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="house_address">House Address</label>
+                                <input type="text" name="house_address" id="house_address">
+                                <span class="error-message" id="house_address_error"></span>
+                            </div>
+
+                            <div class="form-col">
+                                <label for="work_address">Work Address</label>
+                                <input type="text" name="work_address" id="work_address">
+                                <span class="error-message" id="work_address_error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Passport Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-passport"></i> Passport Information</h3>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="passport_number">Passport Number *</label>
+                                <input type="text" name="passport_number" id="passport_number" required>
+                                <span class="error-message" id="passport_number_error"></span>
+                            </div>
+
+                            <div class="form-col">
+                                <label for="passport_issue_date">Date of Issue *</label>
+                                <input type="date" name="passport_issue_date" id="passport_issue_date" required>
+                                <span class="error-message" id="passport_issue_date_error"></span>
+                            </div>
+
+                            <div class="form-col">
+                                <label for="passport_expiry_date">Expiration Date *</label>
+                                <input type="date" name="passport_expiry_date" id="passport_expiry_date" required>
+                                <span class="error-message" id="passport_expiry_date_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="passport_biodata">Biodata Page (Scan/Photo) *</label>
+                                <input type="file" name="passport_biodata" id="passport_biodata" accept=".pdf,.jpg,.jpeg,.png" required>
+                                <p class="file-hint">PDF, JPG or PNG (Max 2MB)</p>
+                                <span class="error-message" id="passport_biodata_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="document-instruction" style="background: #fff3cd; border-left: 4px solid #f39c12; padding: 15px; margin-top: 15px; border-radius: 4px;">
+                            <h5 style="margin-bottom: 8px; color: #856404;"><i class="fas fa-exclamation-triangle"></i> Important Note</h5>
+                            <p style="margin: 0; color: #856404;">Your passport must be valid for at least six (6) months. Failure to meet this requirement may result in your application being rejected.</p>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="passport_picture">Passport Size Picture</label>
+                                <input type="file" name="passport_picture" id="passport_picture" accept=".jpg,.jpeg,.png">
+                                <p class="file-hint">JPG or PNG (White background, Max 1MB)</p>
+                                <span class="error-message" id="passport_picture_error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visa Type -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-tag"></i> Visa Type</h3>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="visa_type">Type of Visa *</label>
+                                <select name="visa_type" id="visa_type" required>
+                                    <option value="">Select Visa Type</option>
+                                    <option value="tourist">Tourist Visa</option>
+                                    <option value="business">Business Visa</option>
+                                    <option value="family">Family Visa</option>
+                                </select>
+                                <span class="error-message" id="visa_type_error"></span>
+                            </div>
+
+                            <div class="form-col">
+                                <label for="number_of_persons">Number of Persons *</label>
+                                <input type="number" name="number_of_persons" id="number_of_persons" min="1" max="10" value="1" required>
+                                <span class="error-message" id="number_of_persons_error"></span>
+                            </div>
+
+                            <div class="form-col">
+                                <label for="has_ghana_card_or_passport">Do you have a Ghana Card or Ghanaian passport? *</label>
+                                <select name="has_ghana_card_or_passport" id="has_ghana_card_or_passport" required>
+                                    <option value="">Select Option</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                <span class="error-message" id="has_ghana_card_or_passport_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="document-instruction" style="background: #fff3cd; border-left: 4px solid #f39c12; padding: 15px; margin-top: 15px; border-radius: 4px;">
+                            <h5 style="margin-bottom: 8px; color: #856404;"><i class="fas fa-info-circle"></i> Note: Family Visas</h5>
+                            <p style="margin: 0; color: #856404;">Family visas are strictly for applicants with Ghanaian lineage. You must provide supporting documents such as a Ghana Card, Ghanaian birth certificate, or an old Ghanaian passport as proof. Kindly upload any of the documents mentioned as proof of lineage under the section for Supporting Documents. If you do not have any of these documents, please select a Tourist Visa.</p>
+                        </div>
+                    </div>
+
+                    <!-- Travel Dates -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-plane"></i> Travel Dates</h3>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="expected_arrival_date">Expected Arrival Date *</label>
+                                <input type="date" name="expected_arrival_date" id="expected_arrival_date" required>
+                                <span class="error-message" id="expected_arrival_date_error"></span>
+                            </div>
+
+                            <div class="form-col">
+                                <label for="departure_date">Departure Date *</label>
+                                <input type="date" name="departure_date" id="departure_date" required>
+                                <span class="error-message" id="departure_date_error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Host Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-home"></i> Host Information</h3>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="has_host_in_ghana">Do you have a host in Ghana? *</label>
+                                <select name="has_host_in_ghana" id="has_host_in_ghana" required>
+                                    <option value="">Select Option</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                <span class="error-message" id="has_host_in_ghana_error"></span>
+                            </div>
+                        </div>
+
+                        <div id="host-fields" class="dynamic-field">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label for="host_name">Host's Full Name *</label>
+                                    <input type="text" name="host_name" id="host_name">
+                                    <span class="error-message" id="host_name_error"></span>
+                                </div>
+
+                                <div class="form-col">
+                                    <label for="host_contact">Host's Contact Number *</label>
+                                    <input type="text" name="host_contact" id="host_contact">
+                                    <span class="error-message" id="host_contact_error"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label for="host_identification_type">Host's Identification Type *</label>
+                                    <select name="host_identification_type" id="host_identification_type">
+                                        <option value="">Select Identification Type</option>
+                                        <option value="ghana_card">Ghana Card</option>
+                                        <option value="passport">Passport</option>
+                                    </select>
+                                    <span class="error-message" id="host_identification_type_error"></span>
+                                </div>
+
+                                <div class="form-col">
+                                    <label for="host_identification_number">Host's Identification Number *</label>
+                                    <input type="text" name="host_identification_number" id="host_identification_number">
+                                    <span class="error-message" id="host_identification_number_error"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label for="host_address_ghana">Host Address in Ghana *</label>
+                                    <input type="text" name="host_address_ghana" id="host_address_ghana">
+                                    <span class="error-message" id="host_address_ghana_error"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label for="invitation_letter">Invitation Letter</label>
+                                    <input type="file" name="invitation_letter" id="invitation_letter" accept=".pdf,.jpg,.jpeg,.png">
+                                    <p class="file-hint">PDF, JPG or PNG (Max 2MB)</p>
+                                    <span class="error-message" id="invitation_letter_error"></span>
+                                </div>
+
+                                <div class="form-col">
+                                    <label for="host_identification">Host's ID Document</label>
+                                    <input type="file" name="host_identification" id="host_identification" accept=".pdf,.jpg,.jpeg,.png">
+                                    <p class="file-hint">PDF, JPG or PNG (Max 2MB)</p>
+                                    <span class="error-message" id="host_identification_error"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hotel Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-hotel"></i> Hotel Information</h3>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="has_hotel_booking">Do you have a hotel booking? *</label>
+                                <select name="has_hotel_booking" id="has_hotel_booking" required>
+                                    <option value="">Select Option</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                <span class="error-message" id="has_hotel_booking_error"></span>
+                            </div>
+                        </div>
+
+                        <div id="hotel-fields" class="dynamic-field">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <label for="hotel_name">Hotel Name *</label>
+                                    <input type="text" name="hotel_name" id="hotel_name">
+                                    <span class="error-message" id="hotel_name_error"></span>
+                                </div>
+
+                                <div class="form-col">
+                                    <label for="hotel_confirmation_number">Confirmation Number *</label>
+                                    <input type="text" name="hotel_confirmation_number" id="hotel_confirmation_number">
+                                    <span class="error-message" id="hotel_confirmation_number_error"></span>
+                                </div>
                             </div>
                         </div>
 
@@ -703,23 +931,24 @@
             function toggleHostFields() {
                 if (hasHostToggle.value === '1') {
                     hostFields.classList.add('active');
-                    // Add required attributes when showing
                     document.getElementById('host_name').required = true;
                     document.getElementById('host_contact').required = true;
                     document.getElementById('host_identification_type').required = true;
                     document.getElementById('host_identification_number').required = true;
+                    document.getElementById('host_address_ghana').required = true;
                 } else {
                     hostFields.classList.remove('active');
-                    // Remove required attributes when hiding
                     document.getElementById('host_name').required = false;
                     document.getElementById('host_contact').required = false;
                     document.getElementById('host_identification_type').required = false;
                     document.getElementById('host_identification_number').required = false;
+                    document.getElementById('host_address_ghana').required = false;
                 }
             }
 
             if (hasHostToggle && hostFields) {
                 hasHostToggle.addEventListener('change', toggleHostFields);
+                toggleHostFields(); // initialize
             }
 
             // Toggle hotel fields
@@ -740,6 +969,7 @@
 
             if (hasHotelToggle && hotelFields) {
                 hasHotelToggle.addEventListener('change', toggleHotelFields);
+                toggleHotelFields(); // initialize
             }
 
             // Toggle flight fields
@@ -758,6 +988,7 @@
 
             if (hasFlightToggle && flightFields) {
                 hasFlightToggle.addEventListener('change', toggleFlightFields);
+                toggleFlightFields(); // initialize
             }
 
             // Toggle lineage proof field based on visa type
@@ -778,28 +1009,6 @@
                 visaTypeToggle.addEventListener('change', toggleLineageProof);
                 // Initialize on page load
                 toggleLineageProof();
-            }
-
-            // Toggle host address field
-            const hasHostToggle = document.getElementById('has_host_in_ghana');
-            const hostFields = document.getElementById('host-fields');
-
-            function toggleHostFields() {
-                if (hasHostToggle.value === '1') {
-                    hostFields.classList.add('active');
-                    document.getElementById('host_name').required = true;
-                    document.getElementById('host_contact').required = true;
-                    document.getElementById('host_identification_type').required = true;
-                    document.getElementById('host_identification_number').required = true;
-                    document.getElementById('host_address_ghana').required = true;
-                } else {
-                    hostFields.classList.remove('active');
-                    document.getElementById('host_name').required = false;
-                    document.getElementById('host_contact').required = false;
-                    document.getElementById('host_identification_type').required = false;
-                    document.getElementById('host_identification_number').required = false;
-                    document.getElementById('host_address_ghana').required = false;
-                }
             }
 
             // Update price when number of persons changes

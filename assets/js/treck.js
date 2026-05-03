@@ -94,7 +94,7 @@
 
 
 
-  // custom coursor
+// custom cursor
   if ($(".custom-cursor").length) {
 
     var cursor = document.querySelector('.custom-cursor__cursor');
@@ -104,7 +104,8 @@
     document.addEventListener('mousemove', function (e) {
       var x = e.clientX;
       var y = e.clientY;
-      cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+      cursor.style.left = x + 'px';
+      cursor.style.top = y + 'px';
     });
 
     document.addEventListener('mousemove', function (e) {
@@ -116,22 +117,50 @@
 
     document.addEventListener('mousedown', function () {
       cursor.classList.add('click');
-      cursorinner.classList.add('custom-cursor__innerhover')
+      cursorinner.classList.add('custom-cursor__innerhover');
     });
 
     document.addEventListener('mouseup', function () {
-      cursor.classList.remove('click')
-      cursorinner.classList.remove('custom-cursor__innerhover')
+      cursor.classList.remove('click');
+      cursorinner.classList.remove('custom-cursor__innerhover');
     });
 
     a.forEach(item => {
-      item.addEventListener('mouseover', () => {
+      item.addEventListener('mouseover', function () {
         cursor.classList.add('custom-cursor__hover');
       });
-      item.addEventListener('mouseleave', () => {
+      item.addEventListener('mouseleave', function () {
         cursor.classList.remove('custom-cursor__hover');
       });
-    })
+    });
+
+    // Hide custom cursor when mobile menu is open so clicks work
+    var mobileToggler = document.querySelector('.mobile-nav__toggler');
+    var mobileClose = document.querySelector('.mobile-nav__close');
+    var mobileWrapper = document.querySelector('.mobile-nav__wrapper');
+
+    if (mobileToggler && mobileWrapper) {
+      mobileToggler.addEventListener('click', function () {
+        setTimeout(function () {
+          cursor.classList.add('hide-cursor');
+          cursorinner.classList.add('hide-cursor');
+        }, 100);
+      });
+    }
+    if (mobileClose && mobileWrapper) {
+      mobileClose.addEventListener('click', function () {
+        cursor.classList.remove('hide-cursor');
+        cursorinner.classList.remove('hide-cursor');
+      });
+    }
+    // Also re-show cursor when clicking the overlay (closes menu)
+    var mobileOverlay = document.querySelector('.mobile-nav__overlay');
+    if (mobileOverlay) {
+      mobileOverlay.addEventListener('click', function () {
+        cursor.classList.remove('hide-cursor');
+        cursorinner.classList.remove('hide-cursor');
+      });
+    }
   }
 
 
