@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ghana Visa Application | Ghana Visa Assistance</title>
+    <title>Global Visa Assist | Visa Application</title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
@@ -347,8 +347,9 @@
                         <span class="section-title__tagline">Complete Application</span>
                         <div class="section-title__border-box"></div>
                     </div>
-                    <h2 class="section-title__title">Ghana Visa Application Form</h2>
+                    <h2 class="section-title__title">Global Visa Assist - Visa Application Form</h2>
                     <p class="section-title__text">Complete all sections of the form to apply for a Ghanaian visa</p>
+<p class="section-title__text" style="color: #e74c3c; font-weight: 600; margin-top: 10px;">Note: This service is strictly limited to filling of application forms and not processing of visa applications. All documents needed for your application will be sent to you by email.</p>
                 </div>
 
                 <div id="success-message" class="success-message">
@@ -400,199 +401,17 @@
                             </div>
                         </div>
 
-                        <div class="form-row">
+<div class="form-row">
                             <div class="form-col">
-                                <label for="phone_number">Phone Number *</label>
-                                <input type="tel" name="phone_number" id="phone_number" required>
-                                <span class="error-message" id="phone_number_error"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Passport Information -->
-                    <div class="form-section">
-                        <h3><i class="fas fa-passport"></i> Passport Information</h3>
-
-                        <div class="form-row">
-                            <div class="form-col">
-                                <label for="passport_number">Passport Number *</label>
-                                <input type="text" name="passport_number" id="passport_number" required>
-                                <span class="error-message" id="passport_number_error"></span>
-                            </div>
-
-                            <div class="form-col">
-                                <label for="passport_issue_date">Date of Issue *</label>
-                                <input type="date" name="passport_issue_date" id="passport_issue_date" required>
-                                <span class="error-message" id="passport_issue_date_error"></span>
-                            </div>
-
-                            <div class="form-col">
-                                <label for="passport_expiry_date">Expiration Date *</label>
-                                <input type="date" name="passport_expiry_date" id="passport_expiry_date" required>
-                                <span class="error-message" id="passport_expiry_date_error"></span>
+                                <label for="hotel_confirmation_number">Confirmation Number *</label>
+                                <input type="text" name="hotel_confirmation_number" id="hotel_confirmation_number">
+                                <span class="error-message" id="hotel_confirmation_number_error"></span>
                             </div>
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-col">
-                                <label for="passport_biodata">Biodata Page (Scan/Photo) *</label>
-                                <input type="file" name="passport_biodata" id="passport_biodata" accept=".pdf,.jpg,.jpeg,.png" required>
-                                <p class="file-hint">PDF, JPG or PNG (Max 2MB)</p>
-                                <span class="error-message" id="passport_biodata_error"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Visa Type -->
-                    <div class="form-section">
-                        <h3><i class="fas fa-tag"></i> Visa Type</h3>
-
-                        <div class="form-row">
-                            <div class="form-col">
-                                <label for="visa_type">Type of Visa *</label>
-                                <select name="visa_type" id="visa_type" required>
-                                    <option value="">Select Visa Type</option>
-                                    <option value="tourist">Tourist Visa</option>
-                                    <option value="business">Business Visa</option>
-                                    <option value="family">Family Visa</option>
-                                </select>
-                                <span class="error-message" id="visa_type_error"></span>
-                            </div>
-
-                            <div class="form-col">
-                                <label for="number_of_persons">Number of Persons *</label>
-                                <input type="number" name="number_of_persons" id="number_of_persons" min="1" max="10" value="1" required>
-                                <span class="error-message" id="number_of_persons_error"></span>
-                            </div>
-
-                            <div class="form-col">
-                                <label for="has_ghana_card_or_passport">Do you have a Ghana Card or Ghanaian passport? *</label>
-                                <select name="has_ghana_card_or_passport" id="has_ghana_card_or_passport" required>
-                                    <option value="">Select Option</option>
-                                    <option value="1">Yes</option>
-                                    <option value="0">No</option>
-                                </select>
-                                <span class="error-message" id="has_ghana_card_or_passport_error"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Travel Dates -->
-                    <div class="form-section">
-                        <h3><i class="fas fa-plane"></i> Travel Dates</h3>
-
-                        <div class="form-row">
-                            <div class="form-col">
-                                <label for="expected_arrival_date">Expected Arrival Date *</label>
-                                <input type="date" name="expected_arrival_date" id="expected_arrival_date" required>
-                                <span class="error-message" id="expected_arrival_date_error"></span>
-                            </div>
-
-                            <div class="form-col">
-                                <label for="departure_date">Departure Date *</label>
-                                <input type="date" name="departure_date" id="departure_date" required>
-                                <span class="error-message" id="departure_date_error"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Host Information -->
-                    <div class="form-section">
-                        <h3><i class="fas fa-home"></i> Host Information</h3>
-
-                        <div class="form-row">
-                            <div class="form-col">
-                                <label for="has_host_in_ghana">Do you have a host in Ghana? *</label>
-                                <select name="has_host_in_ghana" id="has_host_in_ghana" required>
-                                    <option value="">Select Option</option>
-                                    <option value="1">Yes</option>
-                                    <option value="0">No</option>
-                                </select>
-                                <span class="error-message" id="has_host_in_ghana_error"></span>
-                            </div>
-                        </div>
-
-                        <div id="host-fields" class="dynamic-field">
-                            <div class="form-row">
-                                <div class="form-col">
-                                    <label for="host_name">Host's Full Name *</label>
-                                    <input type="text" name="host_name" id="host_name">
-                                    <span class="error-message" id="host_name_error"></span>
-                                </div>
-
-                                <div class="form-col">
-                                    <label for="host_contact">Host's Contact Number *</label>
-                                    <input type="text" name="host_contact" id="host_contact">
-                                    <span class="error-message" id="host_contact_error"></span>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-col">
-                                    <label for="host_identification_type">Host's Identification Type *</label>
-                                    <select name="host_identification_type" id="host_identification_type">
-                                        <option value="">Select Identification Type</option>
-                                        <option value="ghana_card">Ghana Card</option>
-                                        <option value="passport">Passport</option>
-                                    </select>
-                                    <span class="error-message" id="host_identification_type_error"></span>
-                                </div>
-
-                                <div class="form-col">
-                                    <label for="host_identification_number">Host's Identification Number *</label>
-                                    <input type="text" name="host_identification_number" id="host_identification_number">
-                                    <span class="error-message" id="host_identification_number_error"></span>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-col">
-                                    <label for="invitation_letter">Invitation Letter</label>
-                                    <input type="file" name="invitation_letter" id="invitation_letter" accept=".pdf,.jpg,.jpeg,.png">
-                                    <p class="file-hint">PDF, JPG or PNG (Max 2MB)</p>
-                                    <span class="error-message" id="invitation_letter_error"></span>
-                                </div>
-
-                                <div class="form-col">
-                                    <label for="host_identification">Host's ID Document</label>
-                                    <input type="file" name="host_identification" id="host_identification" accept=".pdf,.jpg,.jpeg,.png">
-                                    <p class="file-hint">PDF, JPG or PNG (Max 2MB)</p>
-                                    <span class="error-message" id="host_identification_error"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Hotel Information -->
-                    <div class="form-section">
-                        <h3><i class="fas fa-hotel"></i> Hotel Information</h3>
-
-                        <div class="form-row">
-                            <div class="form-col">
-                                <label for="has_hotel_booking">Do you have a hotel booking? *</label>
-                                <select name="has_hotel_booking" id="has_hotel_booking" required>
-                                    <option value="">Select Option</option>
-                                    <option value="1">Yes</option>
-                                    <option value="0">No</option>
-                                </select>
-                                <span class="error-message" id="has_hotel_booking_error"></span>
-                            </div>
-                        </div>
-
-                        <div id="hotel-fields" class="dynamic-field">
-                            <div class="form-row">
-                                <div class="form-col">
-                                    <label for="hotel_name">Hotel Name *</label>
-                                    <input type="text" name="hotel_name" id="hotel_name">
-                                    <span class="error-message" id="hotel_name_error"></span>
-                                </div>
-
-                                <div class="form-col">
-                                    <label for="hotel_confirmation_number">Confirmation Number *</label>
-                                    <input type="text" name="hotel_confirmation_number" id="hotel_confirmation_number">
-                                    <span class="error-message" id="hotel_confirmation_number_error"></span>
-                                </div>
-                            </div>
+                        <div class="document-instruction" style="background: #fff3cd; border-left: 4px solid #f39c12; padding: 15px; margin-top: 15px; border-radius: 4px;">
+                            <h5 style="margin-bottom: 8px; color: #856404;"><i class="fas fa-info-circle"></i> Important Note</h5>
+                            <p style="margin: 0; color: #856404;">Kindly ensure that the document you upload clearly shows the names of each guest on the hotel booking.</p>
                         </div>
                     </div>
 
@@ -642,6 +461,43 @@
                                 <input type="file" name="photograph" id="photograph" accept=".jpg,.jpeg,.png" required>
                                 <p class="file-hint">JPG or PNG (White background, Max 1MB)</p>
                                 <span class="error-message" id="photograph_error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row" id="lineage-proof-row" style="display: none;">
+                            <div class="form-col">
+                                <label for="lineage_proof">Proof of Lineage (For Family Visa) *</label>
+                                <input type="file" name="lineage_proof" id="lineage_proof" accept=".pdf,.jpg,.jpeg,.png">
+                                <p class="file-hint">Ghana Card, Ghanaian birth certificate, or old Ghanaian passport (PDF, JPG or PNG, Max 2MB)</p>
+                                <span class="error-message" id="lineage_proof_error"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appointment & Processing Centre -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-calendar-alt"></i> Appointment & Processing Centre</h3>
+
+                        <div class="document-instruction" style="background: #fff3cd; border-left: 4px solid #f39c12; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                            <h5 style="margin-bottom: 8px; color: #856404;"><i class="fas fa-info-circle"></i> Appointment Information</h5>
+                            <p style="margin: 0; color: #856404;">Choose an appointment date of your choice to present your documentations to the centre after forms are completed.</p>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-col">
+                                <label for="appointment_date">Appointment Date</label>
+                                <input type="date" name="appointment_date" id="appointment_date">
+                                <span class="error-message" id="appointment_date_error"></span>
+                            </div>
+
+                            <div class="form-col">
+                                <label for="processing_centre">Processing Centre *</label>
+                                <select name="processing_centre" id="processing_centre">
+                                    <option value="">Select Processing Centre</option>
+                                    <option value="highgate">Highgate Centre</option>
+                                    <option value="premium">Premium Application Centre</option>
+                                </select>
+                                <span class="error-message" id="processing_centre_error"></span>
                             </div>
                         </div>
                     </div>
@@ -696,6 +552,9 @@
                                     <li><a href="index.html#visa-services">Services</a></li>
                                     <li><a href="index.html#pricing">Pricing</a></li>
                                     <li><a href="index.html#contact">Contact</a></li>
+                                    <li><a href="faq.html">FAQs</a></li>
+                                    <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -751,7 +610,10 @@
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="site-footer__bottom-inner">
-                                    <p class="site-footer__bottom-text">© Copyright 2025 by <a href="#">ghanavisaassist.com</a></p>
+                                    <p class="site-footer__bottom-text">© Copyright 2026 by <a href="#">globalvisaassist.com</a></p>
+                                    <p class="site-footer__bottom-text" style="margin-top: 10px; font-size: 12px; color: #856404; background: #fff3cd; padding: 10px; border-radius: 4px; border-left: 4px solid #f39c12;">
+                                        <strong>Disclaimer:</strong> Global Visa Assist (GVA) is an independent application support service and is not affiliated with the Ghana High Commission, Ghana Immigration Service, or any government authority. We do not issue visas or passports. All decisions are made solely by the relevant authorities.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -896,6 +758,48 @@
 
             if (hasFlightToggle && flightFields) {
                 hasFlightToggle.addEventListener('change', toggleFlightFields);
+            }
+
+            // Toggle lineage proof field based on visa type
+            const visaTypeToggle = document.getElementById('visa_type');
+            const lineageProofRow = document.getElementById('lineage-proof-row');
+
+            function toggleLineageProof() {
+                if (visaTypeToggle.value === 'family') {
+                    lineageProofRow.style.display = 'block';
+                    document.getElementById('lineage_proof').required = true;
+                } else {
+                    lineageProofRow.style.display = 'none';
+                    document.getElementById('lineage_proof').required = false;
+                }
+            }
+
+            if (visaTypeToggle && lineageProofRow) {
+                visaTypeToggle.addEventListener('change', toggleLineageProof);
+                // Initialize on page load
+                toggleLineageProof();
+            }
+
+            // Toggle host address field
+            const hasHostToggle = document.getElementById('has_host_in_ghana');
+            const hostFields = document.getElementById('host-fields');
+
+            function toggleHostFields() {
+                if (hasHostToggle.value === '1') {
+                    hostFields.classList.add('active');
+                    document.getElementById('host_name').required = true;
+                    document.getElementById('host_contact').required = true;
+                    document.getElementById('host_identification_type').required = true;
+                    document.getElementById('host_identification_number').required = true;
+                    document.getElementById('host_address_ghana').required = true;
+                } else {
+                    hostFields.classList.remove('active');
+                    document.getElementById('host_name').required = false;
+                    document.getElementById('host_contact').required = false;
+                    document.getElementById('host_identification_type').required = false;
+                    document.getElementById('host_identification_number').required = false;
+                    document.getElementById('host_address_ghana').required = false;
+                }
             }
 
             // Update price when number of persons changes
